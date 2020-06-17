@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import { Cards, CountryPicker, Chart } from './components';
 import { fetchData} from './api/';
 import styles from './App.module.css';
 
@@ -30,7 +30,9 @@ class App extends React.Component {
     
     return (
       <div className={styles.container}>
-        {console.log(data)}
+       <Cards data={data} />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country} /> 
       </div>
     );
   }
